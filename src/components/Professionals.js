@@ -17,7 +17,7 @@ export default () => (
   <div className="page">
     <Navbar fluid fixedTop toggleNavKey={0}>
       <NavBrand>
-        <Link to="/">JPLC</Link>
+        <Link to="//paullecam.github.io/jplecam">JPLC</Link>
       </NavBrand>
       <Nav navbar eventKey={0}>
         <NavItem href="#boutiques">Boutiques</NavItem>

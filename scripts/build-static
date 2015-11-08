@@ -19,11 +19,11 @@ const writePage = (location, contents) => new Promise((resolve, reject) => {
 `<html>
   <head>
     <title>Jean-Paul Le Cam - Architecture d'intérieur</title>
-    <link rel="stylesheet" href="/static/styles.css" />
+    <link rel="stylesheet" href="//paullecam.github.io/jplecam/static/styles.css" />
   </head>
   <body>
     <div id="site">${ contents }</div>
-    <script src="/static/site.js"></script>
+    <script src="//paullecam.github.io/jplecam/static/site.js"></script>
   </body>
 </html>`
   );
