@@ -9,9 +9,9 @@ import { match, RoutingContext } from "react-router";
 import routes from "../src/routes";
 
 const pages = [
-  "/",
-  "/particuliers/",
-  "/professionnels/",
+  "",
+  "particuliers/",
+  "professionnels/",
 ];
 
 const writePage = (location, contents) => new Promise((resolve, reject) => {
@@ -28,14 +28,17 @@ const writePage = (location, contents) => new Promise((resolve, reject) => {
   </body>
 </html>`
   );
-  outputFile(`./www${ location }/index.html`, html, err => {
+  outputFile(`./www/${ location }/index.html`, html, err => {
     if (err) reject(err);
     else resolve();
   });
 });
 
 const buildPage = location => new Promise((resolve, reject) => {
-  match({location, routes}, (error, redirectLocation, props) => {
+  match({
+    location: process.env.BASE_URI + location,
+    routes
+  }, (error, redirectLocation, props) => {
     if (error) {
       return reject(error);
     }

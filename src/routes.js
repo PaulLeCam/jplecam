@@ -8,8 +8,8 @@ import Professionals from "./components/Professionals";
 
 export default (
   <Route component={Layout}>
-    <Route path="/" component={Home} />
-    <Route path="/particuliers/" component={Individuals} />
-    <Route path="/professionnels/" component={Professionals} />
+    <Route path={process.env.BASE_URI} component={Home} />
+    <Route path={process.env.BASE_URI + "particuliers/"} component={Individuals} />
+    <Route path={process.env.BASE_URI + "professionnels/"} component={Professionals} />
   </Route>
 );
