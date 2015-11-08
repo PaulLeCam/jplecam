@@ -31,7 +31,7 @@ export default () => (
             </div>
           </CarouselItem>
         </Carousel>
-        <Link className="btn btn-default btn-block btn-lg" to={process.env.BASE_URI + "professionnels/"}>Plus d'infos</Link>
+        <Link className="btn btn-default btn-block btn-lg" to="/professionnels/">Plus d'infos</Link>
       </Col>
       <Col md={6}>
         <h3 className="text-center">Pour particuliers</h3>
@@ -55,7 +55,7 @@ export default () => (
             </div>
           </CarouselItem>
         </Carousel>
-        <Link className="btn btn-default btn-block btn-lg" to={process.env.BASE_URI + "particuliers/"}>Plus d'infos</Link>
+        <Link className="btn btn-default btn-block btn-lg" to="/particuliers/">Plus d'infos</Link>
       </Col>
     </Row>
   </Grid>

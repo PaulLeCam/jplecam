@@ -17,7 +17,7 @@ export default () => (
   <div className="page">
     <Navbar fluid fixedTop toggleNavKey={0}>
       <NavBrand>
-        <Link to={process.env.BASE_URI}>JPLC</Link>
+        <Link to="/">JPLC</Link>
       </NavBrand>
       <Nav navbar eventKey={0}>
         <NavItem href="#maisons">Maisons</NavItem>

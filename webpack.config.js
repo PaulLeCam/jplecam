@@ -6,8 +6,7 @@ var DEV = process.env.NODE_ENV === "development";
 var plugins = [
   new webpack.DefinePlugin({
     "process.env": {
-      "BASE_URI": DEV ? "'/'" : "'/jplecam/'",
-      "NODE_ENV": "'development'" //DEV ? "'development'" : "'production'"
+      "NODE_ENV": DEV ? "'development'" : "'production'"
     }
   }),
   new webpack.optimize.OccurenceOrderPlugin(),
