@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "build": "NODE_ENV=production webpack -p --progress && ./scripts/build-static",
+    "build": "NODE_ENV=production webpack --progress && BASE_URI='/jplecam/' ./scripts/build-static",
     "dev": "NODE_ENV=development webpack-dev-server --watch"
   },
   "dependencies": {
