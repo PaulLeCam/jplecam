@@ -1,0 +1,59 @@
+#!/usr/bin/env babel-node
+
+import { outputFile } from "fs-extra";
+import createHistory from "history/lib/createMemoryHistory";
+import React from "react";
+import { renderToStaticMarkup, renderToString } from "react-dom/server";
+import { match, RoutingContext } from "react-router";
+
+import routes from "../src/routes";
+
+const pages = [
+  "/",
+  "/particuliers/",
+  "/professionnels/",
+];
+
+const writePage = (location, contents) => new Promise((resolve, reject) => {
+  const html = (
+`<html>
+  <head>
+    <title>Jean-Paul Le Cam - Architecture d'intérieur</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <div id="site">${ contents }</div>
+    <script src="/static/site.js"></script>
+  </body>
+</html>`
+  );
+  outputFile(`./www${ location }/index.html`, html, err => {
+    if (err) reject(err);
+    else resolve();
+  });
+});
+
+const buildPage = location => new Promise((resolve, reject) => {
+  match({location, routes}, (error, redirectLocation, props) => {
+    if (error) {
+      return reject(error);
+    }
+    if (redirectLocation) {
+      return reject(new Error("Redirect"));
+    }
+    if (!props) {
+      return reject(new Error("Not found"));
+    }
+
+    return resolve(writePage(location, renderToString(
+      <div><RoutingContext {...props}>{routes}</RoutingContext></div>
+    )));
+  });
+});
+
+Promise.all(pages.map(buildPage)).then(() => {
+  console.log('Done!');
+})
+.catch(err => {
+  console.error(err.stack);
+});
