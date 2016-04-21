@@ -2,24 +2,80 @@
 @import "~bootstrap/less/bootstrap.less";
 @import "bootswatch.less";
 
-.page {
-  margin-top: 50px;
+.Header {
+  background-color: @color-blue;
+  color: white;
+  text-shadow: 1px 1px 1px black;
+  text-align: center;
+  padding: 50px 0;
+  background: rgba(42,206,247,1);
+  background: -moz-linear-gradient(-45deg, rgba(42,206,247,1) 0%, rgba(61,139,255,1) 38%, rgba(12,144,245,1) 51%, rgba(24,240,222,1) 71%, rgba(87,230,39,1) 100%);
+  background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(42,206,247,1)), color-stop(38%, rgba(61,139,255,1)), color-stop(51%, rgba(12,144,245,1)), color-stop(71%, rgba(24,240,222,1)), color-stop(100%, rgba(87,230,39,1)));
+  background: -webkit-linear-gradient(-45deg, rgba(42,206,247,1) 0%, rgba(61,139,255,1) 38%, rgba(12,144,245,1) 51%, rgba(24,240,222,1) 71%, rgba(87,230,39,1) 100%);
+  background: -o-linear-gradient(-45deg, rgba(42,206,247,1) 0%, rgba(61,139,255,1) 38%, rgba(12,144,245,1) 51%, rgba(24,240,222,1) 71%, rgba(87,230,39,1) 100%);
+  background: -ms-linear-gradient(-45deg, rgba(42,206,247,1) 0%, rgba(61,139,255,1) 38%, rgba(12,144,245,1) 51%, rgba(24,240,222,1) 71%, rgba(87,230,39,1) 100%);
+  background: linear-gradient(135deg, rgba(42,206,247,1) 0%, rgba(61,139,255,1) 38%, rgba(12,144,245,1) 51%, rgba(24,240,222,1) 71%, rgba(87,230,39,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2acef7', endColorstr='#57e627', GradientType=1 );
 }
 
-.section-main {
-  background-color: @gray-lighter;
-  color: @gray-darker;
-  text-align: center;
-  padding: 150px 0;
+.SectionCard {
+  margin-bottom: 20px;
+}
+
+.SectionCard-link {
+  background-size: cover;
+  display: block;
+  height: 300px;
+  position: relative;
+  transition: all 200ms ease;
+
+  &:hover {
+    text-decoration: none;
+    box-shadow: 0 0 30px black;
+  }
+}
+
+.SectionCard-title {
+  font-size: 2em;
+}
+
+.SectionCard-contents {
+  background-color: rgba(0, 0, 0, 0.7);
+  bottom: 0;
+  color: white;
+  padding: 10px;
+  position: absolute;
+  width: 100%;
+}
+
+.page {
+  // margin-top: 50px;
+}
+
+.navbar {
+  background-color: white;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: rgba(61,139,255,1);
+  &:hover {
+    background-color: rgba(87,230,39,1);
+    color: white;
+  }
 }
 
 .section-details {
   padding: 25px 0;
 }
 
+.section-lead {
+  font-size: 1.8em;
+  padding: 25px 0;
+}
+
 .section-segment {
-  background-color: @gray-darker;
-  color: @body-bg;
+  // background-color: @gray-darker;
+  // color: @body-bg;
   padding: 25px 0;
 }
 

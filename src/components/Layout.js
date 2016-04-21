@@ -1,8 +1,11 @@
 import React from "react";
 import { Col, Grid, Row } from "react-bootstrap";
 
+import Header from "./Header";
+
 export default ({ children }) => (
   <Grid fluid>
+    <Header />
     <Row>{children}</Row>
     <Row>
       <Col className="section-contact">
